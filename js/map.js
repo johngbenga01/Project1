@@ -18,6 +18,12 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={
     attribution: "ESA, Google"
 });
 
+var googleTraffic = L.tileLayer('https://{s}.google.com/vt/lyrs=m@221097413,traffic&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        minZoom: 2,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    });
+
 var googleHybrid = L.tileLayer('http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}', {
     maxZoom: 20,
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
@@ -270,7 +276,8 @@ var baseLayers = {
     "Google Street": googleStreets,
     "Google Hybrid": googleHybrid,
     "Google Satelite": googleSat,
-    "Google Terrain": googleTerrain
+    "Google Terrain": googleTerrain,
+    "Google Traffic": googleTraffic
 };
 
 // Layers
