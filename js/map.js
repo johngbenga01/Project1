@@ -1,9 +1,15 @@
 // Initialise map
-var map = L.map('map').setView([6.52, 3.53 ], 10);
+var map = L.map('map',{
+  measureControl: true
+ 
+}).setView([6.52, 3.53 ], 10);
 
 //Test
 
 L.DomUtil.setOpacity(map.zoomControl.getContainer(), 100); // set opacity of zoom buttons
+
+// Add Esri tile layer
+//var esri = L.esri.basemapLayer('Topographic').addTo(map)
 
 // Add osm tile layer to map
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -17,6 +23,12 @@ var googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
     attribution: "ESA, Google"
 });
+
+var googleTraffic = L.tileLayer('https://{s}.google.com/vt/lyrs=m@221097413,traffic&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        minZoom: 2,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+    });
 
 var googleHybrid = L.tileLayer('http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}', {
     maxZoom: 20,
@@ -270,7 +282,9 @@ var baseLayers = {
     "Google Street": googleStreets,
     "Google Hybrid": googleHybrid,
     "Google Satelite": googleSat,
-    "Google Terrain": googleTerrain
+    "Google Terrain": googleTerrain,
+    "Google Traffic": googleTraffic,
+    //"Esri": esri
 };
 
 // Layers
@@ -292,6 +306,10 @@ L.control.layers(baseLayers, overlays,{ collapsed: false }).addTo(map);
 // Add leaflet print control
 L.control.browserPrint({ position: 'topleft' }).addTo(map);
 
+// Add measure control
+// var map = L.map('map', {
+//   measureControl: true
+// });
 // mouse move coordinate
 map.on("mousemove", function(e) {
     $("#coordinate").html(`Lat:${e.latlng.lat.toFixed(3)}, Lng: ${e.latlng.lng.toFixed(3)}`)
