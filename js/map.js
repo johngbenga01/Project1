@@ -1,6 +1,6 @@
 // Initialise map
 var map = L.map('map',{
-  measureControl: true
+  measureControl: false
  
 }).setView([6.52, 3.53 ], 10);
 
