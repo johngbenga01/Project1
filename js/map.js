@@ -1,9 +1,6 @@
 // Initialise map
 var map = L.map('map', {
-    
     zoomControl: false,
-
-
 
 }).setView([6.52, 3.53], 10);
 
