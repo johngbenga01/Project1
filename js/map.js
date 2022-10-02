@@ -1,6 +1,6 @@
 // Initialise map
 var map = L.map('map',{
-  measureControl: false
+
  
 }).setView([6.52, 3.53 ], 10);
 
@@ -300,7 +300,7 @@ var overlays = {
 };
 
 // Add layer control to map
-L.control.layers(baseLayers, overlays,{ collapsed: false }).addTo(map);
+L.control.layers(baseLayers, overlays,{ collapsed: true }).addTo(map);
 
 
 // Add leaflet print control
