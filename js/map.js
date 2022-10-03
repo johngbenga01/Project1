@@ -86,10 +86,6 @@ var zoomHome = new L.Control.zoomHome();
 zoomHome.addTo(map);
 //Test
 
-//L.DomUtil.setOpacity(map.zoomControl.getContainer(), 100); // set opacity of zoom buttons
-
-// Add Esri tile layer
-//var esri = L.esri.basemapLayer('Topographic').addTo(map)
 
 // Add osm tile layer to map
 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -361,7 +357,12 @@ L.control.measure({
     primaryLengthUnit: 'kilometers', 
     secondaryLengthUnit: 'meters',
     primaryAreaUnit: 'sqmeters', 
-    secondaryAreaUnit: undefined 
+    secondaryAreaUnit: null,
+    captureZIndex: 999,
+    activeColor: "red",
+    completedColor: "blue",
+    
+
 }).addTo(map);
 
 // Basemaps
