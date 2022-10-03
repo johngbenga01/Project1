@@ -413,7 +413,6 @@ L.control.layers(baseLayers, overlays, { collapsed: true }).addTo(map);
 L.control.browserPrint({ position: 'topleft' }).addTo(map);
 
 
-
 // Add measure control
 // var map = L.map('map', {
 //   measureControl: true
