@@ -352,7 +352,7 @@ var waterBodiesWMS = L.tileLayer.wms("http://localhost:8080/geoserver/geospatial
     layers: 'geospatial:Water2020_tif',
     format: 'image/png',
     transparent: true,
-    attribution: ""
+    attribution: " ESA"
 }) //.addTo(map)
 
 // Add measure control

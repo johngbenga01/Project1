@@ -27,6 +27,7 @@
     bottom: 0;
 }
 
+/*
 .box {
     left: 0;
     opacity: 0.8;
@@ -58,6 +59,7 @@
 }
 
 /* The switch - the box around the slider */
+/*
 .switch {
     position: relative;
     display: inline-block;
@@ -68,11 +70,13 @@
 }
 
 /* Hide default HTML checkbox */
+/*
 .switch input {
     display: none;
 }
 
 /* The slider */
+/*
 .slider {
     position: absolute;
     cursor: pointer;
@@ -109,6 +113,7 @@ input:checked+.slider:before {
 }
 
 /* Rounded sliders */
+/*
 .slider.round {
     border-radius: 34px;
 }
