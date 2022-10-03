@@ -366,6 +366,7 @@ L.control.measure({
 
 // Basemaps
 var baseLayers = {
+    //"<span style='color: gray'>Grayscale</span>": grayscale,
     "OpenStreetMap": osm,
     "Google Street": googleStreets,
     "Google Hybrid": googleHybrid,
@@ -401,10 +402,10 @@ L.control.layers(baseLayers, overlays, { collapsed: true }).addTo(map);
 
 // Map print
 
-$(`.print-map`).click(function () {
+// $(`.print-map`).click(function () {
 
-    window.print();
-});
+//     window.print();
+// });
 // Add leaflet print control
 L.control.browserPrint({ position: 'topleft' }).addTo(map);
 
