@@ -84,7 +84,21 @@ L.Control.zoomHome = L.Control.extend({
 
 var zoomHome = new L.Control.zoomHome();
 zoomHome.addTo(map);
-//Test
+
+// Add measure control
+
+L.control.measure({ 
+    primaryLengthUnit: 'kilometers', 
+    secondaryLengthUnit: 'meters',
+    primaryAreaUnit: 'sqmeters', 
+    secondaryAreaUnit: null,
+    captureZIndex: 999,
+    activeColor: "grey",
+    completedColor: "black",
+    
+    
+
+}).addTo(map);
 
 
 // Add osm tile layer to map
@@ -351,19 +365,7 @@ var waterBodiesWMS = L.tileLayer.wms("http://localhost:8080/geoserver/geospatial
     attribution: " ESA"
 }) //.addTo(map)
 
-// Add measure control
 
-L.control.measure({ 
-    primaryLengthUnit: 'kilometers', 
-    secondaryLengthUnit: 'meters',
-    primaryAreaUnit: 'sqmeters', 
-    secondaryAreaUnit: null,
-    captureZIndex: 999,
-    activeColor: "red",
-    completedColor: "blue",
-    
-
-}).addTo(map);
 
 // Basemaps
 var baseLayers = {
